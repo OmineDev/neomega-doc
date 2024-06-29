@@ -1,0 +1,21 @@
+{
+  "name": "lumega wiki",
+  "short_name": "lumega_wiki",
+  "description": "lumega wiki",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#1313ff",
+  "icons": [
+    {
+      "src": "pwa/lumega192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "lumega.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    }
+  ]
+}
