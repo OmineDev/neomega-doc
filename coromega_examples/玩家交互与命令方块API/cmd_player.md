@@ -279,62 +279,7 @@ description: 命令示例
     local id = player:skin_id()
     local id,found = player:skin_id()
     ```
-	
-### 获取玩家属性标识
-- properties_flag()
-    - 范围:协程内
-    - 说明:获取玩家的属性标识
-    - 参数:无
-    - 返回值:属性标识,是否获得该信息
-    ``` lua
-    local flag = player:properties_flag()
-    local flag,found = player:properties_flag()
-    ```
-	
-### 获取玩家命令权限等级
-- command_permission_level()
-    - 范围:协程内
-    - 说明:获取玩家的命令权限等级
-    - 参数:无
-    - 返回值:命令权限等级,是否获得该信息
-    ``` lua
-    local level = player:command_permission_level()
-    local level,found = player:command_permission_level()
-    ```
-	
-### 获取玩家动作权限
-- action_permissions()
-    - 范围:协程内
-    - 说明:获取玩家的动作权限
-    - 参数:无
-    - 返回值:动作权限,是否获得该信息
-    ``` lua
-    local permissions = player:action_permissions()
-    local permissions,found = player:action_permissions()
-    ```
-	
-### 获取玩家op权限等级
-- op_permission_level()
-    - 范围:协程内
-    - 说明:获取玩家的op权限等级
-    - 参数:无
-    - 返回值:op权限等级,是否获得该信息
-    ``` lua
-    local level = player:op_permission_level()
-    local level,found = player:op_permission_level()
-    ```
-	
-### 获取玩家自定义存储权限
-- custom_stores_permissions()
-    - 范围:协程内
-    - 说明:获取玩家的自定义存储权限
-    - 参数:无
-    - 返回值:自定义存储权限,是否获得该信息
-    ``` lua
-    local permissions = player:custom_stores_permissions()
-    local permissions,found = player:custom_stores_permissions()
-    ```
-	
+
 ### 获取玩家设备id
 - device_id()
     - 范围:协程内
@@ -364,30 +309,187 @@ description: 命令示例
     ``` lua
     local metadata, found = player:entity_metadata()
     ```
-	
-## 获取玩家的冒险和动作能力等级字典
-- adventure_and_action_ability_map()
+
+### 读取玩家放置方块权限
+- get_build_ability()
     - 范围:协程内
-    - 说明:获取玩家的冒险和动作能力等级字典
+    - 说明:获取玩家放置方块权限，是否获得该信息
     - 参数:无
-    - 返回值:冒险和动作能力等级字典,是否获得该信息
+    - 返回值:元数据
     ``` lua
-    local adventure_ability_map, action_permission_ability_map = player:adventure_and_action_ability_map()
-    local adventure_ability_map, action_permission_ability_map,found = player:adventure_and_action_ability_map()
+    local can_build_or_place_blocks, found = player:get_build_ability()
     ```
-	
-### 更新玩家的权限等级字典
-- set_adventure_and_permission_ability_map(adventure_ability_map, action_ability_map)
+### 设置玩家放置方块权限
+- set_build_ability(allow)
     - 范围:协程内
-    - 说明:更新玩家的权限等级字典, 一般和 adventure_and_action_ability_map 搭配使用
-    - 参数:
-        - adventure_ability_map:冒险能力等级字典
-        - action_ability_map:动作能力等级字典
-    - 返回值:无
+    - 说明:设置玩家放置方块权限
+    - 参数:无
+    - 返回值:元数据
     ``` lua
-    player:set_adventure_and_permission_ability_map(adventure_ability_map, action_permission_ability_map)
+    player:set_build_ability(true)
     ```
-	
+
+### 读取玩家破坏方块权限
+- get_mine_ability()
+    - 范围:协程内
+    - 说明:获取玩家破坏方块权限，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local can_mine_or_break_blocks, found = player:get_mine_ability()
+    ```
+
+### 设置玩家破坏方块权限
+- set_mine_ability(allow)
+    - 范围:协程内
+    - 说明:设置玩家破坏方块权限
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    player:set_mine_ability(true)
+    ```
+
+### 读取玩家操作门和开关权限
+- get_door_and_switches_ability()
+    - 范围:协程内
+    - 说明:获取玩家操作门和开关权限，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local can_interact_with_door_and_switches, found = player:get_door_and_switches_ability()
+    ```
+
+### 设置玩家操作门和开关权限
+- set_door_and_switches_ability(allow)
+    - 范围:协程内
+    - 说明:设置玩家操作门和开关权限
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    player:set_door_and_switches_ability(true)
+    ```
+
+
+### 读取玩家打开容器权限
+- get_open_container_ability()
+    - 范围:协程内
+    - 说明:获取玩家打开容器权限，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local can_open_container, found = player:get_open_container_ability()
+    ```
+
+### 设置玩家打开容器权限
+- set_open_container_ability(allow)
+    - 范围:协程内
+    - 说明:设置玩家打开容器权限
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    player:set_open_container_ability(true)
+    ```
+
+### 读取玩家攻击其他玩家权限
+- get_attack_player_ability()
+    - 范围:协程内
+    - 说明:获取玩家攻击其他玩家权限，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local can_attack_player, found = player:get_attack_player_ability()
+    ```
+
+### 设置玩家攻击其他玩家权限
+- set_attack_player_ability(allow)
+    - 范围:协程内
+    - 说明:设置玩家攻击其他玩家权限
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    player:set_attack_player_ability(true)
+    ```
+
+### 读取玩家攻击生物权限
+- get_attack_mobs_ability()
+    - 范围:协程内
+    - 说明:获取玩家攻击生物权限，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local can_attack_mobs, found = player:get_attack_mobs_ability()
+    ```
+
+### 设置玩家攻击生物权限
+- set_attack_mobs_ability(allow)
+    - 范围:协程内
+    - 说明:设置玩家攻击生物权限
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    player:set_attack_mobs_ability(true)
+    ```
+
+### 读取玩家命令权限(同op权限)
+- get_operator_command_ability()
+    - 范围:协程内
+    - 说明:获取玩家命令权限(同op权限)，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local can_send_operator_command, found = player:get_operator_command_ability()
+    ```
+
+### 设置玩家命令权限
+- set_operator_command_ability(allow)
+    - 范围:协程内
+    - 说明:设置玩家命令权限
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    player:set_operator_command_ability(true)
+    ```
+
+### 读取玩家传送权限
+- get_teleport_ability()
+    - 范围:协程内
+    - 说明:获取玩家传送权限，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local can_teleport, found = player:get_teleport_ability()
+    ```
+
+### 设置玩家传送权限
+- set_teleport_ability(allow)
+    - 范围:协程内
+    - 说明:设置玩家传送权限
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    player:set_teleport_ability(true)
+    ```
+
+### 读取玩家飞行状态
+- get_flying_status()
+    - 范围:协程内
+    - 说明:获取玩家飞行状态，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local is_flying, found = player:get_flying_status()
+    ```
+
+### 读取玩家无敌(不受伤害)状态
+- get_invulnerable_status()
+    - 范围:协程内
+    - 说明:获取玩家无敌(不受伤害)，是否获得该信息
+    - 参数:无
+    - 返回值:元数据
+    ``` lua
+    local is_invulnerable, found = player:get_invulnerable_status()
+    ```
+
 ### 判断是否为op
 - is_op()
     - 范围:协程内
