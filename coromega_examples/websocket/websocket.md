@@ -26,7 +26,7 @@ description: Websocket示例
         conn:send_message("client hello")
         local received = conn:receive_message()
         if received == nil then
-            print("websocket connection closed!", msg)
+            print("websocket connection closed!")
         else
             print("websocket client received (first message): ", received)
         end
