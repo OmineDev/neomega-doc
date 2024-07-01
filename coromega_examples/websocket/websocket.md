@@ -6,12 +6,14 @@ description: Websocket示例
 # Websocket相关API
 
 ## 连接到一个 websocket 服务器
-- connect_to_websocket(addr)
+- connect_to_websocket(addr,optional_header)
     - 范围: 协程内
     - 参数: 
         - addr: 服务器地址, e.g. ws://127.0.0.1:1042, ws://127.0.0.1:1042/path/to/ws_api
+        - optional_header: 可选的 http header, 可忽略
     - 返回值为一个 WebSocketConn 对象
     ```lua
+    -- 不使用 header
     coromega:start_new(function()
         local conn = coromega:connect_to_websocket("ws://127.0.0.1:1042")
         conn:when_new_msg(function(msg)
@@ -28,6 +30,16 @@ description: Websocket示例
         else
             print("websocket client received (first message): ", received)
         end
+    end)
+
+    -- 使用 header
+    coromega:start_new(function()
+        local headers = {
+            header1 = { "a", 2, "c" }, -- 可以是多个(2会变成 "2")
+            header2 = { "some headers" },   
+            header3 = "header3,some values" -- 可以是单个 string
+        }
+        local conn = coromega:connect_to_websocket("ws://127.0.0.1:1042",headers)
     end)
     ```
 
