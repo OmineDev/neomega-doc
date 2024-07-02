@@ -16,6 +16,10 @@ description: Websocket示例
     -- 不使用 header
     coromega:start_new(function()
         local conn = coromega:connect_to_websocket("ws://127.0.0.1:1042")
+        if conn == nil then
+            coromega:print("connect fail")
+            return
+        end
         conn:when_new_msg(function(msg)
             if msg == nil then
                 print("websocket connection closed!", msg)
@@ -56,7 +60,7 @@ description: Websocket示例
     coromega:create_websocket_server("0.0.0.0", 1042):when_new_conn(function(conn)
         conn:when_new_msg(function(msg)
             if msg == nil then
-                print("websocket connection closed!", msg)
+                print("websocket connection closed!")
             else
                 print("websocket server received (not intercepted): ", msg)
             end
@@ -65,7 +69,7 @@ description: Websocket示例
         conn:send_message("server hello")
         local received = conn:receive_message()
         if received == nil then
-            print("websocket connection closed!", msg)
+            print("websocket connection closed!")
         else
             print("websocket server received (first message): ", received)
         end
@@ -105,9 +109,9 @@ description: Websocket示例
     ```lua
     conn:when_new_msg(function(msg)
         if msg == nil then
-            print("websocket connection closed!", msg)
+            print("websocket connection closed!")
         else
-            print("websocket received (not intercepted): ", msg)
+            print("websocket received (not intercepted): ")
         end
     end)
     ```
@@ -121,7 +125,7 @@ description: Websocket示例
     ```lua
     local received = conn:receive_message()
     if msg == nil then
-        print("websocket connection closed!", msg)
+        print("websocket connection closed!")
     else
         print("websocket received: ", received)
     end
@@ -153,6 +157,10 @@ end)
 coromega:start_new(function()
     coromega:sleep(1.0)
     local conn = coromega:connect_to_websocket("ws://127.0.0.1:1042")
+    if conn == nil then
+        coromega:print("connect fail")
+        return
+    end
     conn:when_new_msg(function(msg)
         print("websocket client received (not intercepted): ", msg)
     end)
