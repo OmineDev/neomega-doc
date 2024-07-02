@@ -38,7 +38,7 @@ const coromega = [
 	// 代码分发保护
 	'/coromega_examples/在分发时保护你的代码/在分发时保护你的代码/',
 	// 密码_哈希_base64
-	'/coromega_examples/密码_哈希_base64/'
+	'/coromega_examples/密码_哈希_base64/密码_哈希_base64'
 ]
 
 
