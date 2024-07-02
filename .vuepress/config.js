@@ -37,6 +37,8 @@ const coromega = [
 	'/coromega_examples/配置读取和升级相关API/配置读取和升级/',
 	// 代码分发保护
 	'/coromega_examples/在分发时保护你的代码/在分发时保护你的代码/',
+	// 密码_哈希_base64
+	'/coromega_examples/密码_哈希_base64/'
 ]
 
 
@@ -90,10 +92,10 @@ export default defineUserConfig({
 				text: 'Lua接口',
 				link: '/coromega_examples/',
 				children: [
-				{
-					text: 'coromega',
-					children: coromega
-				}]
+					{
+						text: 'coromega',
+						children: coromega
+					}]
 			}
 		],
 		// 自定义侧边栏
