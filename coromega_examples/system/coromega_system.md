@@ -156,3 +156,22 @@ description: 系统功能示例
         coromega:print("coroutine 1 exit")
     end)
     ```
+
+## 使能协程
+- run()
+    - 范围: 任意
+    - 说明: 使能协程，完成go到lua的数据推送转协程恢复, 一般在插件最后一行
+    - 返回值: 无
+    ``` lua 
+    coromega:run()
+    print("这行永远不会被运行")
+    ```
+
+## 失能协程
+- halt()
+    - 范围: 任意
+    - 说明: 失能协程，打断go到lua的数据推送转协程恢复, 调用后所有挂起的协程都不再恢复，可认为插件已经无效
+    - 返回值: 无
+    ``` lua 
+    coromega:halt()
+    ```
