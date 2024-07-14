@@ -27,21 +27,25 @@ description: 系统功能示例
     ```
 
 ## 从终端获取输入
-- input(hint)
+- input(hint,timeout)
     - 范围: 协程内
     - 说明: 从终端获取输入, 末尾的换行符号("\n")会被移除
     - 参数: hint 为提示信息
+    - 参数: timeout 为输入超时(超时时会获得空输入)
     - 返回值: 输入的内容
     ``` lua
-    local input = coromega:input("请输入:")
+    local input1 = coromega:input("请输入:")
+    local input2 = coromega:input("请输入:",3.1)
     ```
-- backend_input(hint)
+- backend_input(hint,timeout)
     - 范围: 协程内
     - 说明: 从终端获取输入,效果和 input 完全相同
     - 参数: hint 为提示信息
+    - 参数: timeout 为输入超时(超时时会获得空输入)
     - 返回值: 输入的内容
     ``` lua
-    local input = coromega:backend_input("请输入:")
+    local input1 = coromega:backend_input("请输入:")
+    local input2 = coromega:backend_input("请输入:",3.1)
     ```
 	
 ## 系统架构信息
