@@ -5,7 +5,7 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { pwaPlugin } from '@vuepress/plugin-pwa'
 import { searchPlugin } from '@vuepress/plugin-search'
 
-// lua接口文档全局定义
+// lua 接口文档全局定义
 const coromega = [
 	// 命令收发
 	'/coromega_examples/命令收发api/coromega_cmd/',
@@ -59,20 +59,20 @@ export default defineUserConfig({
 	lang: 'zh-CN',
 	title: 'lumega',
 	// 网站简介
-	description: 'lumega在线文档（NeOmega核心功能）',
+	description: 'lumega 在线文档（NeOmega 核心功能）',
 	// 编译输出路径
 	dest: `buildHtmlDocs`,
-	// 使用 / 即无法使用 github项目pages。克隆仓库部署github.io 需要修改base路径名为：base:"/仓库名/"
+	// 使用 / 即无法使用 github 项目 pages。克隆仓库部署 github.io 需要修改 base 路径名为：base:"/仓库名/"
 	base: "./",
 	theme: defaultTheme({
 		/**
 		 * 仓库地址
-		 * 控制显示右上角的github地址
-		 * 在github上编辑此页按钮依据此条配置生成
+		 * 控制显示右上角的 github 地址
+		 * 在 github 上编辑此页按钮依据此条配置生成
 		 */
 		// repo: 'CMA2401PT/neomega/',
 		logo: "lumega.png",
-		editLinkText: "在GitHub上编辑此页",
+		editLinkText: "在 GitHub 上编辑此页",
 		docsDir: "docs",
 		// 最近更新的文字
 		lastUpdatedText: "最近更新",
@@ -89,7 +89,7 @@ export default defineUserConfig({
 				link: '/install/',
 			},
 			{
-				text: 'Lua接口',
+				text: 'Lua 接口',
 				link: '/coromega_examples/',
 				children: [
 					{
@@ -109,7 +109,7 @@ export default defineUserConfig({
 	}),
 
 	plugins: [
-		// pwa浏览器应用
+		// pwa 浏览器应用
 		pwaPlugin({
 			skipWaiting: true
 		}),
@@ -120,7 +120,7 @@ export default defineUserConfig({
 			// 最大搜索条数
 			maxSuggestions: 10,
 			// 排除的页面
-			// 
+			//
 		}),
 	],
 	head: [
