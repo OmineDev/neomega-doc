@@ -143,14 +143,21 @@ description: 命令示例
     ```
 
 ### 获取输入
-- ask(hint)
+- ask(hint,timeout)
     - 范围:协程内
     - 说明:获取指定玩家的输入
     - 参数:
         - hint:提示给玩家的信息
+        - timeout:输入超时，超时时返回为 nil
     - 返回值:输入的内容
     ``` lua
     local input = player:ask("请输入:")
+    local input = player:ask("请输入:",6.2)
+    if input ==nil then
+        coromega:print("timeout!")
+    else
+        coromega:print(input)
+    end 
     ```
 	
 ### 发送标题（title）
