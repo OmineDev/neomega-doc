@@ -83,11 +83,11 @@ export default defineUserConfig({
 		navbar: [
 			{
 				text: '安装 NeOmega',
-				link: '/安装说明/',
+				link: '/安装说明.md',
 			},
 			{
 				text: '编写Lua插件:快速开始',
-				link: '/lua插件编写/快速开始/60分钟闪电战/',
+				link: '/lua插件编写/快速开始/60分钟闪电战.md',
 			},
 			{
 				text: '编写Lua插件:接口列表',
@@ -101,21 +101,19 @@ export default defineUserConfig({
 		],
 		// 自定义侧边栏
 		sidebar: {
-			// /安装说明/
-			'/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/': {
+			'/安装说明/': {
 				text: '安装 NeOmega',
-				link: '/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/',
+				link: '/安装说明.md',
 			},
-			// /lua插件编写/快速开始/60分钟闪电战/
-			'/lua%E6%8F%92%E4%BB%B6%E7%BC%96%E5%86%99/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/60%E5%88%86%E9%92%9F%E9%97%AA%E7%94%B5%E6%88%98/': {
+			'/lua插件编写/快速开始/60分钟闪电战/': {
 				text: '编写Lua插件:快速开始',
-				link: '/lua%E6%8F%92%E4%BB%B6%E7%BC%96%E5%86%99/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/60%E5%88%86%E9%92%9F%E9%97%AA%E7%94%B5%E6%88%98/',
+				link: '/lua插件编写/快速开始/60分钟闪电战.md',
 			},
 			// lua插件编写
 			'/lua%E6%8F%92%E4%BB%B6%E7%BC%96%E5%86%99/': [{
 				text: '编写Lua插件:接口列表',
 				// lua插件编写
-				link: '/lua%E6%8F%92%E4%BB%B6%E7%BC%96%E5%86%99/',
+				link: '/lua插件编写/',
 				children: coromega
 			}]
 		},
