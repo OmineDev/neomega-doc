@@ -72,7 +72,7 @@ export default defineUserConfig({
 		 * 控制显示右上角的 github 地址
 		 * 在 github 上编辑此页按钮依据此条配置生成
 		 */
-		// repo: 'OmineDev/neomega-doc/',
+		repo: 'OmineDev/neomega-doc/',
 		logo: "lumega.png",
 		editLinkText: "在 GitHub 上编辑此页",
 		// 最近更新的文字
