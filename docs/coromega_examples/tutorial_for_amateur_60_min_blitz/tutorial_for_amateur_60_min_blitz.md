@@ -1694,7 +1694,7 @@ coromega:when_receive_filtered_cqhttp_message_from_default():start_new(function(
 end)
 ```
 
-## 写在最后
+## 最后
 
 你也许注意到了自带的 lua 组件的风格和本教程不太一样，这是因为本教程的写法基于 coromega。
 
@@ -1706,7 +1706,7 @@ coromega 是从 omega 拓展而来，其相比 omega 会好写很多，但是性
 
 关于这些 API，请自行查阅 API 文档。
 
-## 完整代码
+### 完整代码
 
 ```lua
 local omega = require("omega")

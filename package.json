@@ -1,15 +1,15 @@
 {
-  "devDependencies": {
-    "@vuepress/plugin-pwa": "^2.0.0-beta.67",
-    "@vuepress/plugin-search": "^2.0.0-beta.67",
-    "vuepress": "^2.0.0-beta.67"
-  },
-  "scripts": {
-    "docs:dev": "vuepress dev ./",
-    "docs:build": "vuepress build ./"
-  },
-  "dependencies": {
-    "@vuepress/theme-default": "^2.0.0-beta.67",
-    "vue": "^3.3.4"
-  }
+    "devDependencies": {
+        "@vuepress/plugin-pwa": "^2.0.0-beta.67",
+        "@vuepress/plugin-search": "^2.0.0-beta.67",
+        "vuepress": "^2.0.0-beta.67"
+    },
+    "scripts": {
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
+    },
+    "dependencies": {
+        "@vuepress/theme-default": "^2.0.0-beta.67",
+        "vue": "^3.3.4"
+    }
 }
