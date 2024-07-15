@@ -9,16 +9,23 @@ sidebar: auto
 
 ## 安卓、linux、macos
 
-如果你是 安卓、linux、macos 用户，那么
-在你的黑框框 (终端) 里复制黏贴下面一整段： <br/>
-`curl -o install.sh https://omega-1259160345.cos.ap-nanjing.myqcloud.com/fastbuilder_launcher/install.sh && bash install.sh && rm install.sh`
+如果你是 安卓、linux、macos 用户
+
+那么在你的黑框框 (终端) 里复制黏贴下面一整段：
+
+```
+curl -o install.sh https://omega-1259160345.cos.ap-nanjing.myqcloud.com/fastbuilder_launcher/install.sh && bash install.sh && rm install.sh
+```
 
 再输入 `./fastbuilder` 即可
 
 ## Windows
 
-windows 下载这个，双击运行：
-[windows-amd64.exe](https://omega-1259160345.cos.ap-nanjing.myqcloud.com/fastbuilder_launcher/windows-amd64.exe)
+windows 下载这个：
+| [windows-amd64.exe](https://omega-1259160345.cos.ap-nanjing.myqcloud.com/fastbuilder_launcher/windows-amd64.exe) |
+| -- |
+
+然后双击运行即可
 
 ## Dockerfile
 

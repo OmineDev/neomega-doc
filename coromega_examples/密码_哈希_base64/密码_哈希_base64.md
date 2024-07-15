@@ -1,15 +1,20 @@
 ---
 lang: zh-CN
-title: 密码、哈希和Base64编码
-description: 密码、哈希和Base64编码
+title: 密码、哈希和 Base64 编码
+description: 密码、哈希和 Base64 编码
 ---
 
-# 密码、哈希和Base64编码相关 API
-基本上，这部分直接使用了 https://github.com/tengattack/gluacrypto 提供的库   
-详细信息和细节请参考 https://github.com/tengattack/gluacrypto 的实现   
-特别的，涉及到加密解密的部分时，您还需有一定密码学基础  
-不过，为了方便上手，我们提供了一个示例演示各种可用的api   
-``` lua
+# 密码、哈希和 Base64 编码相关 API
+
+基本上，这部分直接使用了 [tengattack/gluacrypto](https://github.com/tengattack/gluacrypto) 提供的库
+
+详细信息和细节请参考 [tengattack/gluacrypto](https://github.com/tengattack/gluacrypto) 的实现
+
+特别的，涉及到加密解密的部分时，您还需有一定密码学基础
+
+不过，为了方便上手，我们提供了一个示例演示各种可用的 api
+
+```lua
 local omega = require("omega")
 local coromega = require("coromega").from(omega)
 local crypto = require("crypto") -- 先导入库
@@ -83,10 +88,9 @@ coromega:when_called_by_terminal_menu({
     local message = crypto.decrypt(cipher, method, key, options, iv) -- 解密
     coromega:print(message)
 
-    
+
 end)
 
 coromega:run()
 
 ```
-
