@@ -5,15 +5,16 @@ lang: zh-CN
 title: 首页
 description: lumega wiki
 actions:
-  - text: 了解 lumega
-    link: /coromega_examples/tutorial_for_amateur_60_min_blitz/tutorial_for_amateur_60_min_blitz/
-    type: primary
   - text: 安装 NeOmega
-    link: /install/
+    link: /安装说明/
+    type: primary
+  - text: 编写Lua插件:快速开始
+    link: /lua插件编写/快速开始/60分钟闪电战/
     type: secondary
-  - text: 接口列表
-    link: /coromega_examples/
+  - text: 编写Lua插件:接口列表
+    link: /lua插件编写/
     type: secondary
+
 features:
   - title: 免费
     details: lumega 是 NeOmega 内置功能只需要，NeOmega 作为开源软件为个人提供免费的使用授权

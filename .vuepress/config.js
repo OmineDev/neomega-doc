@@ -7,38 +7,40 @@ import { searchPlugin } from '@vuepress/plugin-search'
 
 // lua 接口文档全局定义
 const coromega = [
-	// 命令收发
-	'/coromega_examples/命令收发api/coromega_cmd/',
-	// 机器人
-	'/coromega_examples/机器人和服务器信息/coromega_botUq/',
-	// 系统功能
-	'/coromega_examples/system/coromega_system/',
-	// 菜单
-	'/coromega_examples/菜单相关API/菜单相关API/',
-	// 数据包
-	'/coromega_examples/数据包监听相关API/数据包监听相关API/',
-	// http
-	'/coromega_examples/http相关/http/',
-	// 存储
-	'/coromega_examples/存储相关/cocomega_storage/',
-	// cqhttp
-	'/coromega_examples/cqhttp相关API/cqhttp相关API/',
-	// 玩家与命令
-	'/coromega_examples/玩家交互与命令方块API/cmd_player/',
-	// 建造
-	'/coromega_examples/方块和命令块放置相关/coromega_place_command_block/',
-	// websocket
-	'/coromega_examples/websocket/websocket/',
-	// 跨插件通信
-	'/coromega_examples/跨插件api调用/跨插件api调用/',
-	// 导入器
-	'/coromega_examples/导入器_strucure_canvas相关API/导入器_strucure_canvas相关API/',
 	// 读取配置
-	'/coromega_examples/配置读取和升级相关API/配置读取和升级/',
+	'/lua插件编写/配置读取和升级相关API/配置读取和升级/',
+	// 菜单
+	'/lua插件编写/菜单相关API/菜单相关API/',
+	// 命令收发
+	'/lua插件编写/命令收发api/coromega_cmd/',
+	// 机器人
+	'/lua插件编写/机器人和服务器信息/coromega_botUq/',
+	// 玩家与命令
+	'/lua插件编写/玩家交互与命令方块API/cmd_player/',
+	// 建造
+	'/lua插件编写/方块和命令块放置相关/coromega_place_command_block/',
+	// 导入器
+	'/lua插件编写/导入器_strucure_canvas相关API/导入器_strucure_canvas相关API/',
+	// 数据包
+	'/lua插件编写/数据包监听相关API/数据包监听相关API/',
+	// 跨插件通信
+	'/lua插件编写/跨插件api调用/跨插件api调用/',
+	// 系统功能
+	'/lua插件编写/system/coromega_system/',
+	// 存储
+	'/lua插件编写/存储相关/cocomega_storage/',
+	// cqhttp
+	'/lua插件编写/cqhttp相关API/cqhttp相关API/',
+	// http
+	'/lua插件编写/http相关/http/',
+	// websocket
+	'/lua插件编写/websocket/websocket/',
+	// 加密哈希Base64
+	'/lua插件编写/密码_哈希_base64/密码_哈希_base64/',
+	// 其他
+	'/lua插件编写/其他/common/',
 	// 代码分发保护
-	'/coromega_examples/在分发时保护你的代码/在分发时保护你的代码/',
-	// 密码_哈希_base64
-	'/coromega_examples/密码_哈希_base64/密码_哈希_base64'
+	'/lua插件编写/在分发时保护你的代码/在分发时保护你的代码/'
 ]
 
 
@@ -59,7 +61,7 @@ export default defineUserConfig({
 	lang: 'zh-CN',
 	title: 'lumega',
 	// 网站简介
-	description: 'lumega 在线文档（NeOmega 核心功能）',
+	description: 'lumega 在线文档(NeOmega 核心功能)',
 	// 编译输出路径
 	dest: `buildHtmlDocs`,
 	// 使用 / 即无法使用 github 项目 pages。克隆仓库部署 github.io 需要修改 base 路径名为：base:"/仓库名/"
@@ -81,16 +83,16 @@ export default defineUserConfig({
 		// 自定义导航栏
 		navbar: [
 			{
-				text: '入门教程',
-				link: '/coromega_examples/tutorial_for_amateur_60_min_blitz/tutorial_for_amateur_60_min_blitz/',
+				text: '安装 NeOmega',
+				link: '/安装说明/',
 			},
 			{
-				text: '安装',
-				link: '/install/',
+				text: '编写Lua插件:快速开始',
+				link: '/lua插件编写/快速开始/60分钟闪电战/',
 			},
 			{
-				text: 'Lua 接口',
-				link: '/coromega_examples/',
+				text: '编写Lua插件:接口列表',
+				link: '/lua插件编写/',
 				children: [
 					{
 						text: 'coromega',
@@ -100,14 +102,21 @@ export default defineUserConfig({
 		],
 		// 自定义侧边栏
 		sidebar: {
-			'/coromega_examples/': [{
-				text: 'coromega',
-				link: '/coromega_examples/',
+			'安装 NeOmega': {
+				text: '安装 NeOmega',
+				link: '/安装说明/',
+			},
+			'/lua插件编写/快速开始/60分钟闪电战/': {
+				text: '编写Lua插件:快速开始',
+				link: '/lua插件编写/快速开始/60分钟闪电战/',
+			},
+			'/lua插件编写/': [{
+				text: '编写Lua插件:接口列表',
+				link: '/lua插件编写/',
 				children: coromega
 			}]
 		},
 	}),
-
 	plugins: [
 		// pwa 浏览器应用
 		pwaPlugin({
