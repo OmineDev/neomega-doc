@@ -6,10 +6,10 @@ title: 首页
 description: lumega wiki
 actions:
   - text: 安装 NeOmega
-    link: /安装说明/
+    link: /安装说明.md
     type: primary
   - text: 编写Lua插件:快速开始
-    link: /lua插件编写/快速开始/60分钟闪电战/
+    link: /lua插件编写/快速开始/60分钟闪电战.md
     type: secondary
   - text: 编写Lua插件:接口列表
     link: /lua插件编写/
