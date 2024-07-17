@@ -278,7 +278,7 @@ coromega:code_path_of("LuaLoader","test") -- {$storage$}/lang/LuaLoader/test
 - delete(key)
   - 范围：任意
   - 说明：删除 key 索引对应的键值对<br>
-    其本质就是 coromega:set(key,"") 也就是将 key 对应的 value 的值设为""(空字符串)
+    其本质就是 coromega:set(key,nil) 也就是将 key 对应的 value 的值设为nil(空)
   - 参数：
     - key: 需要删除的 key
   - 返回值：无
