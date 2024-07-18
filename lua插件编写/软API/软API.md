@@ -1,3 +1,9 @@
+---
+lang: zh-CN
+title: 软API
+description: 软API
+---
+
 # 软API
 
 出于一些原因，例如版本控制问题，跨进程问题，api 提供者并非底层框架而是框架内组件，  
