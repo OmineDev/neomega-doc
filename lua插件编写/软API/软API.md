@@ -4,13 +4,16 @@ title: 软API
 description: 软API
 ---
 
-# 软API
+# 软 API
 
-出于一些原因，例如版本控制问题，跨进程问题，api 提供者并非底层框架而是框架内组件，  
-一些api没有被包装成函数形式以便调用  
-而是以软 api 形式供调用  
-在使用它们时，你可以把它理解为类似发往服务器的 json 请求的概念  
-事实上，使用跨插件api when_called_by_api_named 创建的 api 同样也是一个跨进程的软 api  
+出于一些原因，例如版本控制问题，跨进程问题，api 提供者并非底层框架而是框架内组件，
+一些 api 没有被包装成函数形式以便调用
+
+而是以软 api 形式供调用
+
+在使用它们时，你可以把它理解为类似发往服务器的 json 请求的概念
+
+事实上，使用跨插件 api when_called_by_api_named 创建的 api 同样也是一个跨进程的软 api
 
 
 ## HashedUserID
@@ -27,7 +30,7 @@ local hashed_server_code, found = coromega:soft_get("HashedServerCode")
 coromega:print("hashed_server_code", hashed_server_code)
 ```
 
-## GetNameRecord  
+## GetNameRecord
 使用一个准确的名字请求与之关联的历史或者现在的名字
     - in: {"current_name":string}
     - out {"history_names":[]string}
@@ -40,15 +43,17 @@ coromega:print("hashed_server_code", hashed_server_code)
 ```
 
 ## SearchForName
-使用一个名字或名字内的片段， 例如 使用 "40" 搜索出 "2401PT", 会搜索玩家的历史名字
-- in: {  
-        "part_of_name":string,  
+使用一个名字或名字内的片段，例如 使用 "40" 搜索出 "2401PT", 会搜索玩家的历史名字
+
+- in: {
+        "part_of_name":string,
         "max_results":int  // 最大返回数量
-    }  
-- out:  {"possible_names":[]{  
+    }
+
+- out:  {"possible_names":[]{
             "current":string,  // 当前名
-            "history":string   // 历史名(如果命中历史名)
-        }  
+            "history":string   // 历史名 (如果命中历史名)
+        }
     }
 ``` lua
     local ret, err = coromega:call_other_plugin_api("SearchForName", {

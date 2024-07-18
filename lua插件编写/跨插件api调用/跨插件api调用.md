@@ -9,11 +9,11 @@ description: 跨插件通信示例
 
 - soft_set(key,val)
   - 范围：任意
-  - 说明：向omega写入值，值可以被跨进程、跨插件读取，且不会随着框架崩溃消失(只有在机器人退出才会消失)
+  - 说明：向 omega 写入值，值可以被跨进程、跨插件读取，且不会随着框架崩溃消失 (只有在机器人退出才会消失)
   - 考虑到这是跨进程的，其速度并不是很快
   - 参数：
-    - key: 名字, 必须为 string
-    - val: 值, 必须为 string
+    - key: 名字，必须为 string
+    - val: 值，必须为 string
   - 返回：无
   ``` lua
   coromega:soft_set("status/my_plugin","start")
@@ -23,10 +23,10 @@ description: 跨插件通信示例
 
 - soft_get(key)
   - 范围：任意
-  - 说明：向omega读取值，值可以被跨进程、跨插件读取，且不会随着框架崩溃消失(只有在机器人退出才会消失)
+  - 说明：向 omega 读取值，值可以被跨进程、跨插件读取，且不会随着框架崩溃消失 (只有在机器人退出才会消失)
   - 考虑到这是跨进程的，其速度并不是很快
   - 参数：
-    - key: 名字, 必须为 string
+    - key: 名字，必须为 string
   - 返回：val,found
   ``` lua
   local hashed_server_code,found=coromega:soft_get("HashedServerCode")
@@ -121,7 +121,7 @@ description: 跨插件通信示例
     - api_name: 字符串形式的跨插件 api 名
     - args: 可以被 json.encode 处理的参数
     - timeout: 超时，当超时时，返回 nil,"context deadline exceeded"
-  - 返回：调用结果,错误
+  - 返回：调用结果，错误
   ```lua
   local result,err = coromega:call_other_plugin_api("/calculator/add", { 1,2 })
   print(("result: %d"):format(result)) --3

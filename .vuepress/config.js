@@ -28,7 +28,7 @@ const coromega = [
 	// 系统功能
 	'/lua插件编写/system/coromega_system/',
 	// 存储
-	'/lua插件编写/存储相关/cocomega_storage/',
+	'/lua插件编写/存储相关/coromega_storage/',
 	// cqhttp
 	'/lua插件编写/cqhttp相关API/cqhttp相关API/',
 	// http
