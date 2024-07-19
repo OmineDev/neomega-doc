@@ -7,6 +7,8 @@ import { searchPlugin } from '@vuepress/plugin-search'
 
 // lua 接口文档全局定义
 const coromega = [
+	// 调试 lua 代码
+	'/lua插件编写/调试lua代码/调试代码/',
 	// 读取配置
 	'/lua插件编写/配置读取和升级相关API/配置读取和升级/',
 	// 菜单
@@ -90,6 +92,10 @@ export default defineUserConfig({
 			{
 				text: '编写Lua插件:快速开始',
 				link: '/lua插件编写/快速开始/60分钟闪电战.md',
+			},
+			{
+				text: '编写Lua插件:调试代码',
+				link: '/lua插件编写/调试lua代码/调试代码.md',
 			},
 			{
 				text: '编写Lua插件:接口列表',
