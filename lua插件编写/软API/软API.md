@@ -40,7 +40,7 @@ coromega:print("hashed_server_code", hashed_server_code)
 ```
 
 ## SearchForName
-使用一个名字或名字内的片段， 例如 使用 "40" 搜索出 "2401PT", 会搜索玩家的历史名字（在[改名记录]组件中所记录的历史名字）
+使用一个名字或名字内的片段， 例如 使用 "40" 搜索出 "2401PT", 会搜索玩家的历史名字 (在 [改名记录] 组件中所记录的历史名字)
 - in: {  
         "part_of_name":string,  
         "max_results":int  // 最大返回数量
