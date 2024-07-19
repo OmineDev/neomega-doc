@@ -25,4 +25,5 @@ coromega  是从 omega 的扩展接口，封装了大量的异步操作.
 #### [websocket](./websocket/websocket/)
 #### [加密哈希Base64](./密码_哈希_base64/密码_哈希_base64/)
 #### [其他](./其他/common/)
+#### [软API](./软API/软API.md)
 #### [代码分发保护](./在分发时保护你的代码/在分发时保护你的代码/)

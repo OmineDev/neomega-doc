@@ -43,7 +43,7 @@ end
 remove_data(file)
 
 -- 类数据库贮存（在安卓系统的download目录下，seek等操作不支持，因此无法使用常规的数据库）
-local db = omega.storage.get_noseek_kvdblike("example_db")
+local db = omega.storage.get_kv_db("example_db")
 db:set("name", "omega")
 local value, ok = db:get("name")
 db:iter(function(k, v)
