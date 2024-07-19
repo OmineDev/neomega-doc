@@ -60,6 +60,7 @@ export default defineUserConfig({
 		"!lua_modules",
 		"!lua_components",
 		"!lua_modules",
+		"!弃用文档",
 		// 白名单
 	],
 	lang: 'zh-CN',
