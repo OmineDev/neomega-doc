@@ -42,7 +42,7 @@ description: 系统功能示例
   coromega:log_and_print("在终端显示并记录日志: ", 1, { "a", "b" })
 ```
 
-## 以DEBUG(最低级别)在终端显示信息或记录日志
+## 以 DEBUG(最低级别) 在终端显示信息或记录日志
 
 - debug_out(...)
   - 范围：任意
@@ -56,7 +56,7 @@ description: 系统功能示例
   coromega:debug_out("不会显示或记录日志，除非在配置中将 DEBUG 的显示级别设为 终端或日志: ", 1, { "a", "b" })
 ```
 
-## 以INFO(较低级别)在终端显示信息或记录日志
+## 以 INFO(较低级别) 在终端显示信息或记录日志
 
 - info_out(...)
   - 范围：任意
@@ -69,7 +69,7 @@ description: 系统功能示例
   coromega:info_out("不会显示或记录日志，除非在配置中将 DEBUG 的显示级别设为 终端或日志: ", 1, { "a", "b" })
 ```
 
-## 以SUCCESS级别在终端显示信息或记录日志
+## 以 SUCCESS 级别在终端显示信息或记录日志
 
 - success_out(...)
   - 范围：任意
@@ -81,7 +81,7 @@ description: 系统功能示例
   coromega:success_out("添加绿色的修饰，默认在终端显示并记录日志，除非调整框架配置中的 Success 显示级别 (在最后几行): ", 1, { "a", "b" })
 ```
 
-## 以WARNING级别在终端显示信息或记录日志
+## 以 WARNING 级别在终端显示信息或记录日志
 
 - warning_out(...)
   - 范围：任意
@@ -93,7 +93,7 @@ description: 系统功能示例
   coromega:warning_out("添加黄色的修饰，默认在终端显示并记录日志，除非调整框架配置中的 Warning 显示级别 (在最后几行): ", 1, { "a", "b" })
 ```
 
-## 以ERROR级别在终端显示信息或记录日志
+## 以 ERROR 级别在终端显示信息或记录日志
 
 - error_out(...)
   - 范围：任意

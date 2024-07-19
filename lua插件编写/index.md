@@ -17,7 +17,7 @@ coromega  是从 omega 的扩展接口，封装了大量的异步操作.
 #### [数据包](./数据包监听相关API/数据包监听相关API/)
 #### [跨插件通信](./跨插件api调用/跨插件api调用/)
 #### [系统功能](./system/coromega_system/)
-#### [存储](./存储相关/cocomega_storage/)
+#### [存储](./存储相关/coromega_storage/)
 #### [cqhttp](./cqhttp相关API/cqhttp相关API/)
 #### [http](./http相关/http/)
 #### [websocket](./websocket/websocket/)
