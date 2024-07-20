@@ -21,6 +21,8 @@ const coromega = [
 	'/lua插件编写/玩家交互与命令方块API/cmd_player/',
 	// 建造
 	'/lua插件编写/方块和命令块放置相关/coromega_place_command_block/',
+	// 建筑操作
+	'/lua插件编写/建筑操作/08_structure/',
 	// 导入器
 	'/lua插件编写/导入器_strucure_canvas相关API/导入器_strucure_canvas相关API/',
 	// 数据包

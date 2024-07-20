@@ -1,3 +1,4 @@
+```lua
 local omega = require("omega")
 local print = omega.system.print
 
@@ -185,3 +186,4 @@ end
 -- else
 --     print(("java str name %s not found\n"):format(java_str_name))
 -- end
+```
