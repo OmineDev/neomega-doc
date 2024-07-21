@@ -334,3 +334,95 @@ coromega:code_path_of("LuaLoader","test") -- {$storage$}/lang/LuaLoader/test
   local dst_db=coromega:key_value_db("dst","level")
   src_db:migrate_to(target_db)
 ```
+
+### SQL 数据库 (sqlite)
+
+这部分的实现基本就是   
+https://github.com/vadv/gopher-lua-libs/tree/master/db   
+的复制   
+
+但是因为此链接指向的实现因为 build flag 的原因，无法在 linux,macos,android 平台上工作，所以我们拷贝了这个实现并对其进行修改  
+
+你可以访问:
+https://github.com/vadv/gopher-lua-libs/tree/master/db 进一步了解 api 和实现细节，在这里我们仅仅给出一个示例代码
+
+```lua
+local omega = require("omega")
+local json = require("json")
+--- @type Coromega
+local coromega = require("coromega").from(omega)
+
+local config = {
+  shared = true, -- share connections between lua states
+  max_connections = 1, -- max connection (if you open shared connection with different max_connections - first win)
+  read_only = false,   -- must execute read-write query
+}
+
+local sqlite, err = omega.sync_sql.open("sqlite3", "file:test.db?cache=shared&mode=memory", config)
+if err then error(err) end
+
+local result, err = sqlite:query("select 1")
+if err then error(err) end
+if not(result.rows[1][1] == 1) then error("sqlite error") end
+
+local _, err = sqlite:exec("CREATE TABLE t (id int, name string);")
+if err then error(err) end
+
+for i = 1, 10 do
+    local query = "INSERT INTO t VALUES ("..i..", \"name-"..i.."\");"
+    if i % 2 == 0 then query = "INSERT INTO t VALUES ("..i..", NULL);" end
+    local _, err = sqlite:exec(query)
+    if err then error(err) end
+end
+
+local result, err = sqlite:query("select * from t;")
+if err then error(err) end
+
+for i, v in pairs(result.columns) do
+    if i == 1 then if not(v == "id") then error("error") end end
+    if i == 2 then if not(v == "name") then error("error") end end
+end
+
+for _, row in pairs(result.rows) do
+    for id, name in pairs(result.columns) do
+        print(name, row[id])
+    end
+end
+
+local _, err = sqlite:exec("CREATE TABLE t_stmt (id int, name string);")
+if err then error(err) end
+
+-- stmt exec
+local stmt, err = sqlite:stmt("insert into t_stmt (id, name) values (?, ?)")
+if err then error(err) end
+local result, err = stmt:exec(1, 'name-1')
+if err then error(err) end
+if not(result.rows_affected == 1) then error("affted: "..tostring(result.rows_affected)) end
+local err = stmt:close()
+if err then error(err) end
+
+-- stmt query
+local stmt, err = sqlite:stmt("select name from t_stmt where id = ?")
+if err then error(err) end
+local result, err = stmt:query(1)
+if err then error(err) end
+if not(result.rows[1][1] == 'name-1') then error("must be 'name-1': "..tostring(result.rows[1][1])) end
+local err = stmt:close()
+if err then error(err) end
+
+-- command (outside transaction)
+local _, err = sqlite:command("PRAGMA journal_mode = OFF;")
+if err then error(err) end
+
+local err = sqlite:close()
+if err then error(err) end
+coromega:when_called_by_terminal_menu({
+    triggers = { "sql" },
+    argument_hint = "[arg1] [arg2] ...",
+    usage = "sql",
+}):start_new(function(input)
+    coromega:print("hello from sql!")
+end)
+
+coromega:run()
+```
