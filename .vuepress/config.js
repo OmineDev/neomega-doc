@@ -19,6 +19,8 @@ const coromega = [
 	'/lua插件编写/机器人和服务器信息/coromega_botUq/',
 	// 玩家与命令
 	'/lua插件编写/玩家交互与命令方块API/cmd_player/',
+	// botAction
+	'/lua插件编写/botAction/botAction/',
 	// 建造
 	'/lua插件编写/方块和命令块放置相关/coromega_place_command_block/',
 	// 建筑操作

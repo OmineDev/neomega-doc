@@ -15,6 +15,7 @@ coromega  是从 omega 的扩展接口，封装了大量的异步操作.
 #### [机器人](./机器人和服务器信息/coromega_botUq/)
 #### [玩家与命令](./玩家交互与命令方块API/cmd_player/)
 #### [建造](./方块和命令块放置相关/coromega_place_command_block/)
+#### [botAction](./botAction/botAction.md)
 #### [建筑操作](./建筑操作/08_structure/)
 #### [导入器](./导入器_strucure_canvas相关API/导入器_strucure_canvas相关API/)
 #### [数据包](./数据包监听相关API/数据包监听相关API/)
