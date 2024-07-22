@@ -1,3 +1,9 @@
+---
+lang: zh-CN
+title: 建筑操作
+description: 建筑操作
+---
+
 ```lua
 local omega = require("omega")
 local print = omega.system.print
