@@ -250,7 +250,7 @@ description: botAction
 ## 获取指定物品栏内物品的信息
 
 - get_inventory_content(slot, windows)
-  - 范围：协程内
+  - 范围：任意
   - 说明：机器人获取指定物品栏槽位内物品的信息
   - 参数：
     - slot: number类型，物品栏槽位号（可选0~8）
@@ -268,7 +268,7 @@ description: botAction
 ## 设置结构方块的内容
 
 - set_structure_block_data(block_pos, settings)
-  - 范围：协程内
+  - 范围：任意
   - 说明：机器人设置指定坐标的结构方块的内容
   - 参数：
     - block_pos: table<string,number>类型，方块坐标
