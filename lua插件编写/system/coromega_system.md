@@ -18,6 +18,19 @@ description: 系统功能示例
   coromega:print("在终端显示: ", 1, { "a", "b" })
 ```
 
+## 字符串MC颜色转换
+
+- sprint(...)
+  - 范围：任意
+  - 说明：获取转换MC颜色代码后的字符串，使其能在终端显示相应颜色的信息
+  - 参数：... 为任意参数
+  - 返回值：无
+
+```lua
+  local color_msg = coromega:sprint(("§l§b%s §r§o§e%s"):format("Hello","World"))
+  print(color_msg)
+```
+
 ## 记录日志
 
 - log(...)
