@@ -24,7 +24,7 @@ description: 系统功能示例
   - 范围：任意
   - 说明：获取转换MC颜色代码后的字符串，使其能在终端显示相应颜色的信息
   - 参数：... 为任意参数
-  - 返回值：无
+  - 返回值：color_msg 颜色格式化后的信息
 
 ```lua
   local color_msg = coromega:sprint(("§l§b%s §r§o§e%s"):format("Hello","World"))
