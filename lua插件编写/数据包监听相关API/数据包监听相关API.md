@@ -41,14 +41,14 @@ description: 数据包监听相关示例
 ```lua
 local packets = omega.packets
 coromega:when_receive_packet_of_types(packets.Text, packets.CommandOutput):start_new(function(packet)
-    coromega:log(("packet name: %s id: %s"):format(packet:name(), packet:id()))
+    coromega:print(("packet name: %s id: %s"):format(packet:name(), packet:id()))
     if packet:name() == packets.CommandOutput then
-        coromega:log(("detail packet %s"):format(packet:json_str(packet)))
+        coromega:print(("detail packet %s"):format(packet:json_str(packet)))
         local packet_userdata = packet:user_data()
-        coromega:log(("detail packet (user_data) %s"):format(packet_userdata))
-        coromega:log(("detail packet (lua table) %s"):format(ud2lua(packet_userdata)))
-        coromega:log(("Origin: %s"):format(packet_userdata.CommandOrigin.Origin))
-        coromega:log(("OutputMessages[0].Message: %s"):format(packet_userdata.OutputMessages[1].Message))
+        coromega:print(("detail packet (user_data) %s"):format(packet_userdata))
+        coromega:print(("detail packet (lua table) %s"):format(ud2lua(packet_userdata)))
+        coromega:print(("Origin: %s"):format(packet_userdata.CommandOrigin.Origin))
+        coromega:print(("OutputMessages[0].Message: %s"):format(packet_userdata.OutputMessages[1].Message))
     end
 end)
 
@@ -67,14 +67,14 @@ local coromega = require("coromega").from(omega)
 
 local packets = omega.packets
 coromega:when_receive_packet_of_types(packets.Text, packets.CommandOutput):start_new(function(packet)
-    coromega:log(("packet name: %s id: %s"):format(packet:name(), packet:id()))
+    coromega:print(("packet name: %s id: %s"):format(packet:name(), packet:id()))
     if packet:name() == packets.CommandOutput then
-        coromega:log(("detail packet %s"):format(packet:json_str(packet)))
+        coromega:print(("detail packet %s"):format(packet:json_str(packet)))
         local packet_userdata = packet:user_data()
-        coromega:log(("detail packet (user_data) %s"):format(packet_userdata))
-        coromega:log(("detail packet (lua table) %s"):format(ud2lua(packet_userdata)))
-        coromega:log(("Origin: %s"):format(packet_userdata.CommandOrigin.Origin))
-        coromega:log(("OutputMessages[0].Message: %s"):format(packet_userdata.OutputMessages[1].Message))
+        coromega:print(("detail packet (user_data) %s"):format(packet_userdata))
+        coromega:print(("detail packet (lua table) %s"):format(ud2lua(packet_userdata)))
+        coromega:print(("Origin: %s"):format(packet_userdata.CommandOrigin.Origin))
+        coromega:print(("OutputMessages[0].Message: %s"):format(packet_userdata.OutputMessages[1].Message))
     end
 end)
 

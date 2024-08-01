@@ -26,9 +26,9 @@ description: 菜单示例
       if cmd == "" then
           cmd = coromega:backend_input("please input cmd: ")
       end
-      coromega:log(("cmd: %s"):format(cmd))
+      coromega:print(("cmd: %s"):format(cmd))
       local result = coromega:send_ws_cmd(cmd, true)
-      coromega:log(("cmd result: %s"):format(json.encode(result)))
+      coromega:print(("cmd result: %s"):format(json.encode(result)))
   end)
   ```
 
@@ -58,7 +58,7 @@ description: 菜单示例
               player:say("命令不能为空")
           end
       end
-      coromega:log(("cmd: %s"):format(cmd))
+      coromega:print(("cmd: %s"):format(cmd))
       local result = coromega:send_ws_cmd(cmd, true)
       player:say(("cmd result: %s"):format(json.encode(result)))
   end)
@@ -84,9 +84,9 @@ coromega:when_called_by_terminal_menu({
     if cmd == "" then
         cmd = coromega:backend_input("please input cmd: ")
     end
-    coromega:log(("cmd: %s"):format(cmd))
+    coromega:print(("cmd: %s"):format(cmd))
     local result = coromega:send_ws_cmd(cmd, true)
-    coromega:log(("cmd result: %s"):format(json.encode(result)))
+    coromega:print(("cmd result: %s"):format(json.encode(result)))
 end)
 
 coromega:when_called_by_game_menu({
@@ -104,7 +104,7 @@ coromega:when_called_by_game_menu({
             player:say("命令不能为空")
         end
     end
-    coromega:log(("cmd: %s"):format(cmd))
+    coromega:print(("cmd: %s"):format(cmd))
     local result = coromega:send_ws_cmd(cmd, true)
     player:say(("cmd result: %s"):format(json.encode(result)))
 end)
