@@ -115,7 +115,7 @@ description: 跨插件通信示例
 ### 调用跨插件 API
 
 - call_other_plugin_api(api_name, args,timeout)
-  - 范围：任意
+  - 范围：协程内
   - 说明：调用具有 api_name 的跨插件 api，调用参数为 args, 并返回调用结果
   - 参数：
     - api_name: 字符串形式的跨插件 api 名
