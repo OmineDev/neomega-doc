@@ -1,6 +1,6 @@
 import { defineUserConfig } from 'vuepress'
-
 import { defaultTheme } from '@vuepress/theme-default'
+import { viteBundler } from '@vuepress/bundler-vite'
 
 import { pwaPlugin } from '@vuepress/plugin-pwa'
 import { searchPlugin } from '@vuepress/plugin-search'
@@ -53,6 +53,7 @@ const coromega = [
 
 
 export default defineUserConfig({
+	bundler: viteBundler(),
 	// 编译文件匹配规则
 	pagePatterns: [
 		// 默认值

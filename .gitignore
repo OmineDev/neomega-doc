@@ -1,5 +1,6 @@
 # node modules
 node_modules
+package-lock.json
 
 # MacOS desktop services store
 .DS_Store
