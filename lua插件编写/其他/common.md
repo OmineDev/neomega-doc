@@ -59,3 +59,51 @@ description: 其他
     -- -基础属性:
     -- 可被放置于:  草方块 石头 false
     ```
+
+## 字符串操作
+由于默认的 lua 解释器对含中文字符串的位置相关操作是以byte为基准的,  
+例如 "一二三" 不是3个字而是 9 个比特，然而这样很反直觉，且给字符串截取操作带来很多困难，  
+为此，我们将字符串相关所有位置信息都改为 rune 实现，即按 字 来计算   
+以下是一些例子
+``` lua 
+print(string.find("Hello Lua user", "Lua", 1)) -- 7    9
+print(string.find("Hello Lua user", "Lua", 8)) -- nil
+print(string.find("一二三四五", "二")) -- 2 2
+print(string.find("一二三四五", "二", 3)) -- nil
+print(string.find("Hello Lua user", "Lua", 1, true)) -- 7    9
+print(string.find("Hello Lua user", "Lua", 8, true)) -- nil
+print(string.find("一二三四五", "二", 2, true)) -- 2 2
+print(string.find("一二三四五", "二", 3, true)) -- nil
+print(string.gsub("aaaa", "a", "z", 3)) -- zzza    3
+print(string.gsub("一二三四五", "三", "十", 3)) -- 一二十四五
+print(string.reverse("Lua")) -- auL
+print(string.reverse("一二三")) -- 一二三
+print(string.format("the value is:%d", 4)) -- the value is:4
+print(string.char(97, 98, 99, 100)) --abcd
+print(string.char(97, 98, 99, 22235)) --abc四
+print(string.byte("ABCD", 4)) -- 68
+print(string.byte("一二三四", 4)) -- 22235
+print(string.len("abc")) -- 3
+print(string.len("一二三")) -- 3
+print(string.rep("abcd", 2)) -- abcdabcd
+print(string.rep("一二三", 2)) -- 一二三一二三
+print(string.sub("一二三四五", 3, 4)) --三四
+
+print(string.match("I have 2 questions for you.", "%d+ %a+")) -- 2 questions
+print(string.match("I have 二 questions for you.", "二 %a+")) -- 2 questions
+print(string.match("I have 2 questions for you.", "(%d+) (%a+)")) -- 2, "questions"
+print(string.match("I have 二 questions for you.", "(二) (%a+)")) -- 二, "questions"
+for word in string.gmatch("二Hello 二Lua 二user", "二%a+") do
+	print(word)
+end
+-- 二Hello
+-- 二Lua
+-- 二user
+for word in string.gmatch("Hello Lua user", "%a+") do
+	print(word)
+end
+-- Hello
+-- Lua
+-- user
+
+```
