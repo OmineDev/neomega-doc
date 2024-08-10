@@ -327,11 +327,13 @@ description: botAction
   - 参数：
     - block_pos: table类型，物品展示框位置
     - slotID: integer类型，快捷物品栏格子号
+    - rotation: integer类型，旋转角度, 可采用的值有 0,1,2,3... 或者 0,45,90,135 等, 小于 45 的值会被 *45 处理
   - 返回：string类型报错信息|nil
   ```lua
     local item_frame_position = {x=-6, y=-60, z=-24}
     local slot_id = 0
-    local err = coromega:place_item_frame_item(item_frame_position, slot_id)
+    local rotation= 0 -- 1 或者 45 或者 2 或者 90, 小于 45 的值会被*45处理
+    local err = coromega:place_item_frame_item(item_frame_position, slot_id,rotation)
     coromega:print(("运行结果：%s"):format(err or "成功"))
   ```
 
