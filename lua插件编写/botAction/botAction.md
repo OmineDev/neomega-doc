@@ -233,17 +233,18 @@ description: botAction
 
 ## 破坏方块并拾取掉落物
 
-- break_and_pick_block(block_pos, recover_block, retry_times)
+- break_and_pick_block(block_pos, slot, recover_block, retry_times)
   - 范围：协程内
   - 说明：机器人破坏指定坐标的方块并将掉落物品拾取到对应的快捷栏
   - 参数：
     - block_pos: table<string,number>类型，方块坐标
+    - slot: number类型，快捷物品栏格子号（可选0~8）
     - recover_block: boolean类型，是否恢复方块
     - retry_times: number类型，失败重试次数
   - 返回：string类型报错信息|nil
   ```lua
     local block_position = {x=0, y=64, z=0}
-    local err = coromega:break_and_pick_block(block_position, true, 3)
+    local err = coromega:break_and_pick_block(block_position, 0, true, 3)
     coromega:print(("运行结果：%s"):format(err or "成功"))
   ```
 
