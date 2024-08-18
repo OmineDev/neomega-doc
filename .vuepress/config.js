@@ -2,7 +2,6 @@ import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
 import { viteBundler } from '@vuepress/bundler-vite'
 
-import { pwaPlugin } from '@vuepress/plugin-pwa'
 import { searchPlugin } from '@vuepress/plugin-search'
 
 // lua 接口文档全局定义
@@ -133,10 +132,6 @@ export default defineUserConfig({
 		},
 	}),
 	plugins: [
-		// pwa 浏览器应用
-		pwaPlugin({
-			skipWaiting: true
-		}),
 		// 文档搜索
 		searchPlugin({
 			// 最大索引深度
