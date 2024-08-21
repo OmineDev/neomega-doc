@@ -64,6 +64,24 @@ coromega:code_path_of("LuaLoader","test") -- {$storage$}/lang/LuaLoader/test
   coromega:cache_path_of("test") -- {$storage$}/cache/test
 ```
 
+## 获取插件自身的名字
+
+- get_plugin_name()
+- 范围：任意
+- 说明：获取插件自身的名字
+- 参数：无
+- 返回值：插件自身的名字（不带后缀），返回一个字符串
+
+```lua
+  -- 假设插件是 demo.lua
+
+  local code_name = coromega:get_plugin_name()
+  print(code_name)
+
+  -- 输出
+  -- demo
+```
+
 ## 创建临时目录
 
 - make_temp_dir()
