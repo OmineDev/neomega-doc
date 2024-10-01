@@ -98,7 +98,7 @@ description: 机器人和服务器信息
 
 ## 服务器 gamerules 列表
 
-- coromega:sync_ratio()
+- coromega:game_rules()
   - 范围：任意
   - 说明：获取服务器 gamerules 列表
   - 参数：无
