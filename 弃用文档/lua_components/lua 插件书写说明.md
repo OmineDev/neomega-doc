@@ -232,7 +232,7 @@ function talk_to(player, msg)
 end
 
 cbs[game_hello_poller] = function(chat)
-    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."}}
+    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."},parsed_msg=...}
     talk_to(chat.name, ("hi: %s"):format(table.concat(chat.msg, " ")))
 end
 
@@ -243,7 +243,7 @@ local game_echo_poller = omega.menu.add_game_menu_entry({
 })
 
 cbs[game_echo_poller] = function(chat)
-    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."}}
+    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."},parsed_msg=...}
     talk_to(chat.name, ("%s"):format(table.concat(chat.msg, " ")))
 end
 
@@ -254,7 +254,7 @@ local game_rebirth_poller = omega.menu.add_game_menu_entry({
 })
 
 cbs[game_rebirth_poller] = function(chat)
-    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."}}
+    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."},parsed_msg=...}
     talk_to(chat.name, ("重生: %s"):format(table.concat(chat.msg, " ")))
 end
 
@@ -265,7 +265,7 @@ local game_rebirth_poller = omega.menu.add_game_menu_entry({
 })
 
 cbs[game_rebirth_poller] = function(chat)
-    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."}}
+    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."},parsed_msg=...}
     talk_to(chat.name, ("回主城: %s"):format(table.concat(chat.msg, " ")))
 end
 
@@ -277,7 +277,7 @@ local game_mode_poller = omega.menu.add_game_menu_entry({
 })
 
 cbs[game_mode_poller] = function(chat)
-    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."}}
+    -- chat={name="...",msg={"...","...","..."},type=...,raw_msg=...,raw_name=...,raw_parameters={"...","...","..."},parsed_msg=...}
     talk_to(chat.name, ("模式: %s"):format(table.concat(chat.msg, " ")))
 end
 
